@@ -21,20 +21,20 @@ npx skills add Devansh-365/skills --skill '*'
 Install one skill:
 
 ```sh
-npx skills add Devansh-365/skills --skill example-skill
+npx skills add Devansh-365/skills --skill humanizer
 ```
 
 You can also install from the full GitHub URL:
 
 ```sh
-npx skills add https://github.com/Devansh-365/skills --skill example-skill
+npx skills add https://github.com/Devansh-365/skills --skill humanizer
 ```
 
 For local development from this checkout:
 
 ```sh
 npx skills add . --list
-npx skills add . --skill example-skill
+npx skills add . --skill humanizer
 ```
 
 ## Layout
@@ -44,7 +44,7 @@ Each skill lives in its own directory under `skills/` and must include a
 
 ```text
 skills/
-  example-skill/
+  humanizer/
     SKILL.md
     references/
     scripts/
@@ -67,5 +67,6 @@ The same check runs in GitHub Actions on pull requests and pushes to `main`.
 
 ## Skills
 
-- `example-skill`: Template showing the expected package layout. Replace it
-  with a real skill and delete the example once you've added one.
+- `humanizer`: Remove signs of AI-generated writing from text — inflated
+  symbolism, promotional language, em dash overuse, rule of three, AI
+  vocabulary, and other patterns from Wikipedia's "Signs of AI writing" guide.
