@@ -1,0 +1,133 @@
+<!doctype html>
+<!-- Source for hero-light.png and hero-dark.png. Re-export from this folder with:
+  for t in light dark; do "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+    --force-device-scale-factor=2 --default-background-color=00000000 --virtual-time-budget=8000 \
+    --window-size=1280,600 --screenshot=hero-$t.png "file://$PWD/hero.html?$t"; done -->
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafafa; --line: rgba(9, 9, 11, 0.055); --edge: rgba(9, 9, 11, 0.08);
+    --ink: #09090b; --muted: #71717a; --soft: #a1a1aa;
+    --cmd-bg: #ffffff; --cmd-edge: #e4e4e7;
+    --accent: #ffd84a; --accent-edge: rgba(9, 9, 11, 0.12); --win: #111113;
+    --shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 48px 80px -32px rgba(24, 24, 27, 0.45), 0 18px 36px -18px rgba(24, 24, 27, 0.35);
+  }
+  .dark {
+    --bg: #0b0b0c; --line: rgba(255, 255, 255, 0.045); --edge: rgba(255, 255, 255, 0.09);
+    --ink: #fafafa; --muted: #71717a; --soft: #a1a1aa;
+    --cmd-bg: #141416; --cmd-edge: rgba(255, 255, 255, 0.1);
+    --accent-edge: transparent; --win: #151518;
+    --shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 48px 80px -32px rgba(0, 0, 0, 0.9), 0 18px 36px -18px rgba(0, 0, 0, 0.7);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: transparent; }
+  body { width: 1280px; height: 600px; font-family: "Geist", sans-serif; -webkit-font-smoothing: antialiased; }
+
+  .hero {
+    position: relative; width: 1280px; height: 600px; overflow: hidden;
+    background: var(--bg); border: 1px solid var(--edge); border-radius: 28px;
+    display: grid; grid-template-columns: 560px 1fr; align-items: center;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px; background-position: -1px -1px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 90% at 72% 40%, #000 30%, transparent 80%);
+  }
+
+  .copy { position: relative; padding-left: 88px; }
+  .eyebrow {
+    display: flex; align-items: center; gap: 10px;
+    font: 500 13px/1 "Geist Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  }
+  .mark {
+    width: 22px; height: 22px; border-radius: 6px; background: var(--accent); box-shadow: 0 0 0 1px var(--accent-edge) inset;
+    display: grid; place-items: center; font: 600 14px/1 "Geist Mono", monospace; color: #09090b;
+  }
+  h1 {
+    margin-top: 28px; font-weight: 600; font-size: 60px; line-height: 1.02; letter-spacing: -0.04em; color: var(--ink);
+  }
+  h1 span { color: var(--muted); }
+  .sub { margin-top: 24px; max-width: 400px; font-size: 18px; line-height: 1.55; color: var(--muted); }
+  .cmd {
+    margin-top: 36px; display: inline-flex; align-items: center; gap: 12px;
+    padding: 15px 20px; border-radius: 12px; background: var(--cmd-bg); border: 1px solid var(--cmd-edge);
+    font: 500 15px/1 "Geist Mono", monospace; color: var(--ink);
+    box-shadow: 0 1px 2px rgba(9, 9, 11, 0.05);
+  }
+  .cmd i { font-style: normal; color: var(--soft); }
+
+  /* Terminal window: always dark, bleeds off the bottom edge */
+  .window {
+    position: absolute; left: 640px; top: 132px; width: 580px; height: 560px;
+    background: var(--win); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 18px;
+    box-shadow: var(--shadow); overflow: hidden; color: #e4e4e7;
+  }
+  .bar {
+    height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .bar b { width: 11px; height: 11px; border-radius: 50%; background: #27272a; }
+  .bar span { margin-left: auto; margin-right: auto; transform: translateX(-28px); font: 500 12px/1 "Geist Mono", monospace; color: #52525b; }
+
+  .body { padding: 26px 28px; font: 400 14px/1.75 "Geist Mono", monospace; }
+  .prompt { color: #fafafa; }
+  .prompt i { font-style: normal; color: #52525b; margin-right: 10px; }
+  .ok { color: #a1a1aa; }
+  .ok em { font-style: normal; color: var(--accent); margin-right: 10px; }
+  .rule { margin: 22px 0; height: 1px; background: rgba(255, 255, 255, 0.07); }
+
+  .who { font: 500 11px/1 "Geist Mono", monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #52525b; margin-bottom: 10px; }
+  .msg {
+    display: inline-block; padding: 12px 16px; border-radius: 12px; background: #1c1c1f; border: 1px solid rgba(255, 255, 255, 0.06);
+    font: 400 16px/1.45 "Geist", sans-serif; color: #fafafa;
+  }
+  .gap { height: 22px; }
+  .skill { display: flex; align-items: center; gap: 10px; font: 400 15px/1 "Geist", sans-serif; color: #a1a1aa; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px;
+    background: rgba(255, 216, 74, 0.1); border: 1px solid rgba(255, 216, 74, 0.28);
+    font: 500 13px/1 "Geist Mono", monospace; color: var(--accent);
+  }
+  .chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .reply { margin-top: 16px; font: 400 16px/1.6 "Geist", sans-serif; color: #d4d4d8; max-width: 470px; }
+  .reply s { color: #52525b; text-decoration-color: #52525b; }
+  .caret { display: inline-block; width: 9px; height: 18px; background: var(--accent); vertical-align: -3px; margin-left: 4px; border-radius: 1px; }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="copy">
+      <div class="eyebrow"><div class="mark">/</div>Agent skills · Devansh-365</div>
+      <h1>Paste one line.<br><span>Your agent learns<br>a new job.</span></h1>
+      <p class="sub">Free, ready-made skills for Claude Code, Cursor, Codex and 20+ other AI agents.</p>
+      <div class="cmd"><i>$</i>npx skills add Devansh-365/skills</div>
+    </div>
+
+    <div class="window">
+      <div class="bar"><b></b><b></b><b></b><span>~/my-app</span></div>
+      <div class="body">
+        <div class="prompt"><i>$</i>npx skills add Devansh-365/skills</div>
+        <div class="ok"><em>✓</em>Installed for Claude Code, Cursor, Codex +20</div>
+        <div class="rule"></div>
+        <div class="who">You</div>
+        <div class="msg">Make my launch post sound less like AI.</div>
+        <div class="gap"></div>
+        <div class="who">Agent</div>
+        <div class="skill"><span class="chip">humanizer</span>skill loaded</div>
+        <p class="reply">Rewrote it. Cut <s>pivotal moment</s>, <s>seamless</s> and four em dashes. It reads like you now.<span class="caret"></span></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    if (location.search.includes("dark")) document.documentElement.classList.add("dark");
+  </script>
+</body>
+</html>
