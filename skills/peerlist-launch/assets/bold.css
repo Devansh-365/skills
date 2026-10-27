@@ -1,0 +1,52 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap');
+
+/* Bold-and-clear kit (mondaystack monday-listing-assets "bold"), recoloured to the
+   Exhibitor List Scraper README accent. Edit tokens, not frames. */
+:root {
+  --field: #c2410c;
+  --field-deep: #9a3412;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #e7e5e4;
+  --white: #ffffff;
+  --accent: #ffd84a;
+  --soft: rgba(255,255,255,.88);
+  --cream: #fff7ed;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--field); overflow: hidden; }
+.stage {
+  position: relative; width: 1200px; height: 630px; overflow: hidden;
+  background-color: var(--field);
+  background-image: radial-gradient(rgba(255,255,255,.14) 1.2px, transparent 1.5px);
+  background-size: 22px 22px;
+  font-family: 'Satoshi', 'Helvetica Neue', sans-serif; color: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+.brand { position: absolute; left: 56px; top: 46px; display: flex; align-items: center; gap: 12px;
+  font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; font-size: 23px; letter-spacing: -.01em; }
+.brand .tile { width: 40px; height: 40px; border-radius: 10px; background: var(--white); display: grid; place-items: center;
+  box-shadow: 0 6px 14px -6px rgba(60,15,0,.5); }
+.brand .tile img { width: 34px; height: 34px; display: block; }
+.brand span { opacity: .82; font-family: 'Satoshi', sans-serif; font-weight: 500; font-size: 18px; }
+h1 { position: absolute; font-family: 'Cabinet Grotesk', 'Helvetica Neue', sans-serif; font-weight: 800;
+  line-height: .96; letter-spacing: -.02em; color: var(--white); }
+h1 em { font-style: normal; color: var(--accent); }
+.sub { position: absolute; font-size: 21px; line-height: 1.35; color: var(--soft); font-weight: 500; }
+.sub b { color: var(--white); font-weight: 700; }
+.pills { position: absolute; display: flex; gap: 10px; }
+.pills li { list-style: none; font-weight: 700; font-size: 16px; padding: 9px 16px; border-radius: 999px;
+  background: rgba(255,255,255,.14); border: 1.5px solid rgba(255,255,255,.32); white-space: nowrap; }
+.card { position: absolute; border-radius: 16px; overflow: hidden; background: var(--white); color: var(--ink);
+  box-shadow: 0 2px 0 rgba(255,255,255,.4) inset, 0 34px 70px -22px rgba(70,18,0,.6), 0 10px 22px rgba(70,18,0,.25); }
+.tag { position: absolute; font-weight: 700; font-size: 17px; color: var(--ink); background: var(--accent);
+  padding: 8px 13px; border-radius: 9px; white-space: nowrap; box-shadow: 0 8px 18px -8px rgba(70,18,0,.55); }
+.tag.l::before { content: ""; position: absolute; left: -8px; top: 50%; margin-top: -8px; border: 8px solid transparent; border-left: 0; border-right-color: var(--accent); }
+.tag.u::before { content: ""; position: absolute; top: -8px; left: 22px; border: 8px solid transparent; border-top: 0; border-bottom-color: var(--accent); }
+.mono { font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+/* "Runs on Apify" badge: official wordmark (apify.com/img/apify-logo/wordmark.svg) on a white pill */
+.brand .on { display: flex; align-items: center; gap: 9px; margin-left: 6px; background: var(--white); border-radius: 999px;
+  padding: 7px 16px 7px 14px; box-shadow: 0 6px 14px -6px rgba(60,15,0,.5);
+  font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 15px; color: var(--muted); opacity: 1; }
+.brand .on img { height: 24px; width: auto; display: block; }

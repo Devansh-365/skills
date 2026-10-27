@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="asset-group" content="Peerlist covers">
+<meta name="asset-size" content="1200x630">
+<title>Cover 3: a person, not just info@</title>
+<link rel="stylesheet" href="../assets/bold.css">
+<style>
+  h1 { left: 52px; top: 112px; width: 500px; font-size: 76px; }
+  .sub { left: 56px; top: 300px; width: 470px; }
+  .pills { left: 56px; bottom: 44px; }
+  .row { left: 600px; width: 548px; padding: 20px 24px; }
+  .before { top: 70px; background: #fafaf9; color: var(--muted); }
+  .after { top: 262px; }
+  .lbl { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #a8a29e; margin-bottom: 10px; }
+  .after .lbl { color: #9a3412; }
+  .co { font-family: 'Cabinet Grotesk', sans-serif; font-size: 24px; font-weight: 800; color: var(--ink); }
+  .meta { font-size: 14px; color: var(--muted); margin: 3px 0 14px; }
+  .kv { display: grid; grid-template-columns: 104px 1fr; row-gap: 9px; font-size: 15.5px; align-items: center; }
+  .kv dt { color: #78716c; font-weight: 500; font-size: 14px; }
+  .kv dd { color: var(--ink); font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .chip { font-size: 11px; font-weight: 900; letter-spacing: .06em; padding: 3px 7px; border-radius: 6px; }
+  .p { background: #dcfce7; color: #166534; } .r { background: #e0f2fe; color: #075985; }
+  .none { color: #a8a29e !important; font-weight: 500 !important; font-style: italic; }
+  .ok { color: #15803d !important; }
+  .arrow { position: absolute; left: 852px; top: 214px; }
+  .t1 { left: 904px; top: 222px; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="brand"><div class="tile"><img src="../assets/store-icon.png" alt=""></div>Exhibitor List Scraper <span class="on">Runs on <img src="../assets/apify-wordmark.svg" alt="Apify"></span></div>
+  <h1>A person, <em>not just</em> info@.</h1>
+  <p class="sub">When the fair lists no email, it checks the exhibitor's own website.<br><b>Named person and general inbox, labelled.</b></p>
+  <ul class="pills"><li>Never guessed</li><li>Mail domain checked</li></ul>
+
+  <div class="card row before">
+    <div class="lbl">On the fair's list</div>
+    <div class="co">ALTRAD plettac assco GmbH</div>
+    <div class="meta">INTERSCHUTZ 2026 · Hall 17 C16 · plettac-assco.de</div>
+    <dl class="kv"><dt>Email</dt><dd class="none">not listed</dd></dl>
+  </div>
+  <svg class="arrow" width="40" height="44" viewBox="0 0 40 44" fill="none"><path d="M20 4 V 36" stroke="#ffd84a" stroke-width="6" stroke-linecap="round"/><path d="M8 26 L20 38 L32 26" stroke="#ffd84a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="tag l t1">From their website</div>
+  <div class="card row after">
+    <div class="lbl">In your sheet</div>
+    <div class="co">ALTRAD plettac assco GmbH</div>
+    <div class="meta">INTERSCHUTZ 2026 · Hall 17 C16 · plettac-assco.de</div>
+    <dl class="kv">
+      <dt>Personal</dt><dd><span class="mono">j•••.j•••••••@plettac-assco.de</span><span class="chip p">PERSONAL</span></dd>
+      <dt>General</dt><dd><span class="mono">info@plettac-assco.de</span><span class="chip r">ROLE</span></dd>
+      <dt>Mail domain</dt><dd class="ok">✓ accepts mail</dd>
+    </dl>
+  </div>
+</div>
+</body>
+</html>

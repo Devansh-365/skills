@@ -70,3 +70,7 @@ The same check runs in GitHub Actions on pull requests and pushes to `main`.
 - `humanizer`: Remove signs of AI-generated writing from text — inflated
   symbolism, promotional language, em dash overuse, rule of three, AI
   vocabulary, and other patterns from Wikipedia's "Signs of AI writing" guide.
+- `peerlist-launch`: Prepare a full Peerlist Launchpad launch, made for Apify
+  Actors: every Add Project field within Peerlist's limits, the real category
+  list, a bold-style logo and 4 cover images with a "Runs on Apify" badge, a
+  silent HyperFrames demo video, the maker comment and launch-day steps.

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="asset-group" content="Peerlist covers">
+<meta name="asset-size" content="1200x630">
+<title>Cover 1: one clean sheet</title>
+<link rel="stylesheet" href="../assets/bold.css">
+<style>
+  h1 { left: 52px; top: 112px; width: 500px; font-size: 64px; }
+  .sub { left: 56px; top: 352px; width: 470px; }
+  .pills { left: 56px; bottom: 44px; }
+  .sheet { left: 584px; top: 92px; width: 590px; }
+  .sheet .bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--cream); border-bottom: 1px solid #fed7aa;
+    font-size: 13px; font-weight: 700; color: #9a3412; }
+  .sheet .bar i { width: 9px; height: 9px; border-radius: 50%; background: #fdba74; display: block; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  th { text-align: left; font-weight: 700; color: var(--muted); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase;
+    padding: 10px 12px; border-bottom: 1px solid var(--line); background: #fafaf9; white-space: nowrap; }
+  td { padding: 11px 8px; border-bottom: 1px solid #f0efee; white-space: nowrap; color: var(--ink); }
+  td.co { font-weight: 700; }
+  td:last-child, th:last-child { padding-right: 16px; }
+  td:first-child, th:first-child { padding-left: 14px; }
+  td.fair span { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 3px 8px; border-radius: 6px; }
+  .f1 { background: #e0f2fe; color: #075985; } .f2 { background: #fee2e2; color: #991b1b; }
+  .f3 { background: #ede9fe; color: #5b21b6; } .f4 { background: #dcfce7; color: #166534; }
+  td.mail { color: #9a3412; }
+  .t1 { left: 770px; top: 548px; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="brand"><div class="tile"><img src="../assets/store-icon.png" alt=""></div>Exhibitor List Scraper <span class="on">Runs on <img src="../assets/apify-wordmark.svg" alt="Apify"></span></div>
+  <h1>Every fair's exhibitor list. <em>One</em> clean sheet.</h1>
+  <p class="sub">Pick a show or paste its list link.<br><b>Get company, stand, website and email for every exhibitor.</b></p>
+  <ul class="pills"><li>148 named shows</li><li>30 fair platforms</li><li>No login</li></ul>
+
+  <div class="card sheet">
+    <div class="bar"><i></i>exhibitors.xlsx<span style="font-weight:500;color:#78716c">&nbsp;·&nbsp;4 fairs, one format</span></div>
+    <table>
+      <tr><th>Fair</th><th>Company</th><th>Email</th><th>Stand</th></tr>
+      <tr><td class="fair"><span class="f1">MEDICA</span></td><td class="co">aap Implantate AG</td><td class="mail">info@aap.de</td><td>Hall 10 D64</td></tr>
+      <tr><td class="fair"><span class="f1">MEDICA</span></td><td class="co">2A GROUP SRL</td><td class="mail">amministrazione@2agroup.it</td><td>Hall 15 A33-1</td></tr>
+      <tr><td class="fair"><span class="f2">INTERSCHUTZ</span></td><td class="co">ALTRAD plettac assco GmbH</td><td class="mail">info@plettac-assco.de</td><td>Hall 17 C16</td></tr>
+      <tr><td class="fair"><span class="f2">INTERSCHUTZ</span></td><td class="co">Ambetronics</td><td class="mail">sales8@ambetronics.com</td><td>Hall 13 H46</td></tr>
+      <tr><td class="fair"><span class="f3">eCommerce Expo</span></td><td class="co">Magebit</td><td class="mail">us@magebit.com</td><td>F20</td></tr>
+      <tr><td class="fair"><span class="f3">eCommerce Expo</span></td><td class="co">Dalton</td><td class="mail">team@getdalton.com</td><td>K31</td></tr>
+      <tr><td class="fair"><span class="f4">SIGGRAPH</span></td><td class="co">RigX Digital</td><td class="mail">contact@rigxdigital.com</td><td>Hall A 751</td></tr>
+      <tr><td class="fair"><span class="f4">SIGGRAPH</span></td><td class="co">Haply Robotics</td><td class="mail" style="color:#a8a29e">not listed</td><td>Hall A 836</td></tr>
+    </table>
+  </div>
+  <div class="tag u t1">Same columns for every fair</div>
+</div>
+</body>
+</html>
